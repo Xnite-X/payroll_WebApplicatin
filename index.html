@@ -1,0 +1,36 @@
+<!-- Juanda Gilang Purnomo  -->
+<!DOCTYPE html>
+<html lang="en" ng-app="payrollApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Payroll Application</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Payroll</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="#!/">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!/employees">Employees</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!/payroll">Payroll</a></li>
+                </ul>
+            </div>
+        </nav>
+        <br>
+
+        <div ng-view></div>
+        
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/controllers/dashboardController.js"></script>
+    <script src="assets/js/controllers/employeesController.js"></script>
+    <script src="assets/js/controllers/payrollController.js"></script>
+</body>
+</html>

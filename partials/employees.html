@@ -1,0 +1,60 @@
+<!-- Juanda Gilang Purnomo -->
+<div class="container">
+    <h2>Employees</h2>
+    <form ng-submit="addEmployee()">
+        <div class="form-group">
+            <input type="text" ng-model="newName" placeholder="Name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <input type="text" ng-model="newPosition" placeholder="Position" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <input type="number" ng-model="newSalary" placeholder="Salary" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Employee</button>
+    </form>
+    <hr>
+    <table class="table table-bordered" ng-if="employees.length > 0">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Salary</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="employee in employees">
+                <td>{{employee.id}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.position}}</td>
+                <td>{{employee.salary}}</td>
+                <td>
+                    <button class="btn btn-warning" ng-click="editEmployee(employee)">Edit</button>
+                    <button class="btn btn-danger" ng-click="deleteEmployee(employee.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div ng-if="employees.length === 0">
+        <p>No Data</p>
+    </div>
+    <!-- Edit Form -->
+    <div ng-if="isEditing">
+        <h2>Edit Employee</h2>
+        <form ng-submit="updateEmployee()">
+            <div class="form-group">
+                <input type="text" ng-model="currentEmployee.name" placeholder="Name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <input type="text" ng-model="currentEmployee.position" placeholder="Position" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <input type="number" ng-model="currentEmployee.salary" placeholder="Salary" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Employee</button>
+            <button type="button" class="btn btn-secondary" ng-click="cancelEdit()">Cancel</button>
+        </form>
+    </div>
+</div>

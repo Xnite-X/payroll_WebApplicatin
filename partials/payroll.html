@@ -1,0 +1,35 @@
+<div class="container">
+    <h2>Payroll</h2>
+    <form ng-submit="addPayroll()">
+        <div class="form-group">
+            <select ng-model="employee_id" class="form-control" required>
+                <option ng-repeat="employee in employees" value="{{employee.id}}"> {{employee.name}} </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="text" ng-model="month" placeholder="Month" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <input type="number" ng-model="salary" placeholder="Salary" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Payroll</button>
+    </form>
+    <hr>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Month</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="payroll in payrolls">
+                <td>{{payroll.employee_id}}</td>
+                <td>{{payroll.month}}</td>
+                <td>{{payroll.salary}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Juanda Gilang Purnomo -->
